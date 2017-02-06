@@ -1,0 +1,108 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myServiceRespLabel" data-translate="ocrGatewayApp.serviceResp.home.createOrEditLabel">Create or edit a Service Resp</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.serviceResp.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.serviceResp.id" readonly />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setRawJson($file, vm.serviceResp)">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.rawJson" for="field_rawJson">Raw Json</label>
+            <div>
+                <div ng-if="vm.serviceResp.rawJson" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.serviceResp.rawJsonContentType, vm.serviceResp.rawJson)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.serviceResp.rawJsonContentType}}, {{vm.byteSize(vm.serviceResp.rawJson)}}</span>
+                    <button type="button" ng-click="vm.serviceResp.rawJson=null;vm.serviceResp.rawJsonContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setRawJson($file, vm.serviceResp)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="rawJson" id="field_rawJson"
+                    ng-model="vm.serviceResp.rawJson"
+                    required />
+            <input type="hidden" class="form-control" name="rawJsonContentType" id="field_rawJsonContentType"
+                    ng-model="vm.serviceResp.rawJsonContentType" />
+            <div ng-show="editForm.rawJson.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.rawJson.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.documentImage" for="field_documentImage">Document Image</label>
+            <input type="text" class="form-control" name="documentImage" id="field_documentImage"
+                    ng-model="vm.serviceResp.documentImage"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.startDate" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.serviceResp.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.endDate" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.serviceResp.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.lastRunBy" for="field_lastRunBy">Last Run By</label>
+            <input type="text" class="form-control" name="lastRunBy" id="field_lastRunBy"
+                    ng-model="vm.serviceResp.lastRunBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.lastRunDur" for="field_lastRunDur">Last Run Dur</label>
+            <input type="number" class="form-control" name="lastRunDur" id="field_lastRunDur"
+                    ng-model="vm.serviceResp.lastRunDur"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.serviceResp.lastRunDate" for="field_lastRunDate">Last Run Date</label>
+                <div class="input-group">
+                    <input id="field_lastRunDate" type="text" class="form-control" name="lastRunDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.serviceResp.lastRunDate" is-open="vm.datePickerOpenStatus.lastRunDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastRunDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrGatewayApp.serviceResp.edmsDownload" for="field_edmsDownload">Edms Download</label>
+            <select class="form-control" id="field_edmsDownload" name="edmsDownload" ng-model="vm.serviceResp.edmsDownloadId" ng-options="edmsDownload.id as edmsDownload.id for edmsDownload in vm.edmsdownloads | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

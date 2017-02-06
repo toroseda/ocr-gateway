@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "edmsResponse",
+            "otherEntityName": "edmsResponse",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "edmsLocation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "edmsDownload",
+            "otherEntityName": "edmsDownload",
+            "otherEntityRelationshipName": "edmsLocation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "actualDirectory",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statusId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170206061930",
+    "entityTableName": "edms_location",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "ocrData"
+}

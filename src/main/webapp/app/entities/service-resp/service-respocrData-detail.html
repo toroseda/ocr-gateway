@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span data-translate="ocrGatewayApp.serviceResp.detail.title">Service Resp</span> {{vm.serviceResp.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrGatewayApp.serviceResp.rawJson">Raw Json</span></dt>
+        <dd>
+            <div ng-if="vm.serviceResp.rawJson">
+                <a ng-click="vm.openFile(vm.serviceResp.rawJsonContentType, vm.serviceResp.rawJson)" data-translate="entity.action.open">open</a>
+                {{vm.serviceResp.rawJsonContentType}}, {{vm.byteSize(vm.serviceResp.rawJson)}}
+            </div>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.documentImage">Document Image</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.documentImage}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.startDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.endDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.lastRunBy">Last Run By</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.lastRunBy}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.lastRunDur">Last Run Dur</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.lastRunDur}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.lastRunDate">Last Run Date</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.lastRunDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceResp.edmsDownload">Edms Download</span></dt>
+        <dd>
+            <a ui-sref="edms-downloadocrData-detail({id:vm.serviceResp.edmsDownloadId})">{{vm.serviceResp.edmsDownloadId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="service-respocrData-detail.edit({id:vm.serviceResp.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

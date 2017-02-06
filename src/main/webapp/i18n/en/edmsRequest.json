@@ -1,0 +1,31 @@
+{
+    "ocrGatewayApp": {
+        "edmsRequest" : {
+            "home": {
+                "title": "Edms Requests",
+                "createLabel": "Create a new Edms Request",
+                "createOrEditLabel": "Create or edit a Edms Request",
+                "search": "Search for Edms Request"
+            },
+            "created": "A new Edms Request is created with identifier {{ param }}",
+            "updated": "A Edms Request is updated with identifier {{ param }}",
+            "deleted": "A Edms Request is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Edms Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Edms Request"
+            },
+            "accountNumber": "Account Number",
+            "subRequestId": "Sub Request Id",
+            "areaCode": "Area Code",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "lastRunBy": "Last Run By",
+            "lastRunDur": "Last Run Dur",
+            "lastRunDate": "Last Run Date",
+            "ocrSession": "Ocr Session",
+            "requestWf": "Request Wf"
+        }
+    }
+}

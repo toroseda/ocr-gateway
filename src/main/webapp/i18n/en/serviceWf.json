@@ -1,0 +1,24 @@
+{
+    "ocrGatewayApp": {
+        "serviceWf" : {
+            "home": {
+                "title": "Service Wfs",
+                "createLabel": "Create a new Service Wf",
+                "createOrEditLabel": "Create or edit a Service Wf",
+                "search": "Search for Service Wf"
+            },
+            "created": "A new Service Wf is created with identifier {{ param }}",
+            "updated": "A Service Wf is updated with identifier {{ param }}",
+            "deleted": "A Service Wf is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Wf {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Wf"
+            },
+            "statusId": "Status Id",
+            "updatedBy": "Updated By",
+            "serviceResp": "Service Resp"
+        }
+    }
+}

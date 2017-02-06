@@ -1,0 +1,118 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myOcrSessionLabel" data-translate="ocrGatewayApp.ocrSession.home.createOrEditLabel">Create or edit a Ocr Session</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.ocrSession.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.ocrSession.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.ocrSession.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.ocrSession.description"
+                    required />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.statusId" for="field_statusId">Status Id</label>
+            <input type="number" class="form-control" name="statusId" id="field_statusId"
+                    ng-model="vm.ocrSession.statusId"
+                    required />
+            <div ng-show="editForm.statusId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.statusId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.statusId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.serverFilePath" for="field_serverFilePath">Server File Path</label>
+            <input type="text" class="form-control" name="serverFilePath" id="field_serverFilePath"
+                    ng-model="vm.ocrSession.serverFilePath"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.filename" for="field_filename">Filename</label>
+            <input type="text" class="form-control" name="filename" id="field_filename"
+                    ng-model="vm.ocrSession.filename"
+                    required />
+            <div ng-show="editForm.filename.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.filename.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setRequestData($file, vm.ocrSession)">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.requestData" for="field_requestData">Request Data</label>
+            <div>
+                <div ng-if="vm.ocrSession.requestData" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.ocrSession.requestDataContentType, vm.ocrSession.requestData)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.ocrSession.requestDataContentType}}, {{vm.byteSize(vm.ocrSession.requestData)}}</span>
+                    <button type="button" ng-click="vm.ocrSession.requestData=null;vm.ocrSession.requestDataContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setRequestData($file, vm.ocrSession)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="requestData" id="field_requestData"
+                    ng-model="vm.ocrSession.requestData"
+                    required />
+            <input type="hidden" class="form-control" name="requestDataContentType" id="field_requestDataContentType"
+                    ng-model="vm.ocrSession.requestDataContentType" />
+            <div ng-show="editForm.requestData.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.requestData.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.updatedBy" for="field_updatedBy">Updated By</label>
+            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                    ng-model="vm.ocrSession.updatedBy"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-1">
+      <createSequence sequenceName="hibernate_sequence"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-2">
+      <createTable tableName="edms_download">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="edms_downloadPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="actual_directory" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="actual_filename" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="edms_location_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-3">
+      <createTable tableName="edms_location">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="edms_locationPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="actual_directory" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="status_id" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="edms_response_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-4">
+      <createTable tableName="edms_request">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="edms_requestPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="account_number" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="area_code" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="end_date" type="BINARY(255)"/>
+         <column name="last_run_by" type="VARCHAR(255)"/>
+         <column name="last_run_date" type="BINARY(255)"/>
+         <column name="last_run_dur" type="INT"/>
+         <column name="start_date" type="BINARY(255)"/>
+         <column name="sub_request_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="ocr_session_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-5">
+      <createTable tableName="edms_response">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="edms_responsePK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="account_number" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="directory_avilable_flg" type="INT"/>
+         <column name="error_code" type="VARCHAR(255)"/>
+         <column name="error_description" type="VARCHAR(255)"/>
+         <column name="file_count" type="INT"/>
+         <column name="promised_directory" type="VARCHAR(255)"/>
+         <column name="request_doc_type" type="VARCHAR(255)"/>
+         <column name="response_aea_code" type="VARCHAR(255)"/>
+         <column name="response_doc_count" type="INT"/>
+         <column name="response_doc_type" type="VARCHAR(255)"/>
+         <column name="response_sub_request_id" type="VARCHAR(255)"/>
+         <column name="sub_request_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="edms_request_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-6">
+      <createTable tableName="jhi_authority">
+         <column name="name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-7">
+      <createTable tableName="jhi_entity_audit_event">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_entity_audit_eventPK"/>
+         </column>
+         <column name="action" type="VARCHAR(20)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="commit_version" type="INT"/>
+         <column name="entity_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="entity_type" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="entity_value" type="CLOB"/>
+         <column name="modified_by" type="VARCHAR(100)"/>
+         <column name="modified_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-8">
+      <createTable tableName="jhi_persistent_audit_event">
+         <column autoIncrement="true" name="event_id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+         </column>
+         <column name="event_date" type="BINARY(255)"/>
+         <column name="event_type" type="VARCHAR(255)"/>
+         <column name="principal" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-9">
+      <createTable tableName="jhi_persistent_audit_evt_data">
+         <column name="event_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="value" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-10">
+      <createTable tableName="jhi_user">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="activated" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="activation_key" type="VARCHAR(20)"/>
+         <column name="email" type="VARCHAR(100)"/>
+         <column name="first_name" type="VARCHAR(50)"/>
+         <column name="lang_key" type="VARCHAR(5)"/>
+         <column name="last_name" type="VARCHAR(50)"/>
+         <column name="login" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="password_hash" type="VARCHAR(60)"/>
+         <column name="reset_date" type="BINARY(255)"/>
+         <column name="reset_key" type="VARCHAR(20)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-11">
+      <createTable tableName="jhi_user_authority">
+         <column name="user_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="authority_name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-12">
+      <createTable tableName="ocr_session">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ocr_sessionPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="description" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="filename" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="request_data" type="BLOB">
+            <constraints nullable="false"/>
+         </column>
+         <column name="request_data_content_type" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="server_file_path" type="VARCHAR(255)"/>
+         <column name="status_id" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="updated_by" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-13">
+      <createTable tableName="request_wf">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="request_wfPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="status_id" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="updated_by" type="VARCHAR(255)"/>
+         <column name="edms_request_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-14">
+      <createTable tableName="service_resp">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="service_respPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="document_image" type="VARCHAR(255)"/>
+         <column name="end_date" type="BINARY(255)"/>
+         <column name="last_run_by" type="VARCHAR(255)"/>
+         <column name="last_run_date" type="BINARY(255)"/>
+         <column name="last_run_dur" type="INT"/>
+         <column name="raw_json" type="BLOB">
+            <constraints nullable="false"/>
+         </column>
+         <column name="raw_json_content_type" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="start_date" type="BINARY(255)"/>
+         <column name="edms_download_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-15">
+      <createTable tableName="service_wf">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="service_wfPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="status_id" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="updated_by" type="VARCHAR(255)"/>
+         <column name="service_resp_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-16">
+      <createTable tableName="session_wf">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="session_wfPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="BINARY(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="BINARY(255)"/>
+         <column name="status_id" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="updated_by" type="VARCHAR(255)"/>
+         <column name="wf_type_id" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="ocr_session_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-17">
+      <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-18">
+      <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-19">
+      <addPrimaryKey columnNames="name"
+                     constraintName="jhi_authorityPK"
+                     tableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-20">
+      <addUniqueConstraint columnNames="edms_response_id"
+                           constraintName="UC_EDMS_LOCATIONEDMS_RESPONSE_ID_COL"
+                           tableName="edms_location"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-21">
+      <addUniqueConstraint columnNames="edms_request_id"
+                           constraintName="UC_EDMS_RESPONSEEDMS_REQUEST_ID_COL"
+                           tableName="edms_response"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-22">
+      <addUniqueConstraint columnNames="email"
+                           constraintName="UC_JHI_USEREMAIL_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-23">
+      <addUniqueConstraint columnNames="login"
+                           constraintName="UC_JHI_USERLOGIN_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-24">
+      <addUniqueConstraint columnNames="edms_download_id"
+                           constraintName="UC_SERVICE_RESPEDMS_DOWNLOAD_ID_COL"
+                           tableName="service_resp"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-25">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK290okww5jujghp4el5i7mgwu0"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-26">
+      <addForeignKeyConstraint baseColumnNames="event_id"
+                               baseTableName="jhi_persistent_audit_evt_data"
+                               constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="event_id"
+                               referencedTableName="jhi_persistent_audit_event"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-27">
+      <addForeignKeyConstraint baseColumnNames="service_resp_id"
+                               baseTableName="service_wf"
+                               constraintName="FK317wik42df3pwra3a9v245rog"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="service_resp"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-28">
+      <addForeignKeyConstraint baseColumnNames="authority_name"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK4psxl0jtx6nr7rhqbynr6itoc"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="name"
+                               referencedTableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-29">
+      <addForeignKeyConstraint baseColumnNames="edms_request_id"
+                               baseTableName="request_wf"
+                               constraintName="FK6b57bpqrre9q7fogdmmk09owo"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="edms_request"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-30">
+      <addForeignKeyConstraint baseColumnNames="edms_response_id"
+                               baseTableName="edms_location"
+                               constraintName="FKaq1lv2jh54v42s752vpqq5wv3"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="edms_response"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-31">
+      <addForeignKeyConstraint baseColumnNames="edms_location_id"
+                               baseTableName="edms_download"
+                               constraintName="FKdjyq88qd3kc9tdfg9w6m67he9"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="edms_location"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-32">
+      <addForeignKeyConstraint baseColumnNames="ocr_session_id"
+                               baseTableName="session_wf"
+                               constraintName="FKf26f5oc5pk4fln3ahn7s1apgg"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ocr_session"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-33">
+      <addForeignKeyConstraint baseColumnNames="ocr_session_id"
+                               baseTableName="edms_request"
+                               constraintName="FKiowuqa1acx5heqia20iko1cwm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="ocr_session"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-34">
+      <addForeignKeyConstraint baseColumnNames="edms_download_id"
+                               baseTableName="service_resp"
+                               constraintName="FKnemyjkjd2t4qidnwq07h0xe9p"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="edms_download"/>
+   </changeSet>
+   <changeSet author="olutoyeakande (generated)" id="1486362514789-35">
+      <addForeignKeyConstraint baseColumnNames="edms_request_id"
+                               baseTableName="edms_response"
+                               constraintName="FKrkvp6ov7n0armmwl98w972fj0"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="edms_request"/>
+   </changeSet>
+</databaseChangeLog>

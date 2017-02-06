@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="ocrGatewayApp.serviceWf.detail.title">Service Wf</span> {{vm.serviceWf.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrGatewayApp.serviceWf.statusId">Status Id</span></dt>
+        <dd>
+            <span>{{vm.serviceWf.statusId}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceWf.updatedBy">Updated By</span></dt>
+        <dd>
+            <span>{{vm.serviceWf.updatedBy}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceWf.serviceResp">Service Resp</span></dt>
+        <dd>
+            <a ui-sref="service-respocrData-detail({id:vm.serviceWf.serviceRespId})">{{vm.serviceWf.serviceRespId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="service-wfocrData-detail.edit({id:vm.serviceWf.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

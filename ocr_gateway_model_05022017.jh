@@ -1,0 +1,139 @@
+
+
+
+// Hold the session information
+// the reason there is no audit dates and times
+// is because we are using the jhipster module which
+// automatically adds these fields to every entity
+// generated - TA 29-Jan-2017
+
+entity OcrSession {
+    name String required,
+    description String required,
+    statusId Integer required,
+    serverFilePath String,
+    filename String required,
+    requestData Blob required,
+    // createdBy String,
+    updatedBy String,
+}
+
+// Show global workflow status for this session
+entity SessionWf {
+	statusId Integer required,
+    wfTypeId Integer required,
+    // createdBy String, 
+    updatedBy String, 
+}
+
+entity EdmsRequest {
+    accountNumber String required,
+    subRequestId String required,
+    areaCode String required,
+    // createdBy String, 
+    startDate LocalDate,
+    endDate LocalDate,
+    lastRunBy String,
+    lastRunDur Integer,
+    lastRunDate LocalDate
+}
+
+entity RequestWf {
+    statusId Integer required,
+    // createdBy String required, 
+    updatedBy String, 
+}
+
+
+entity ServiceWf {
+    statusId Integer required,
+    // createdBy String required, 
+    updatedBy String, 
+}
+entity EdmsResponse {
+	
+    accountNumber String required,
+    subRequestId String required,
+    requestDocType String,
+    errorCode String,
+    errorDescription String,
+    promisedDirectory String, 
+    responseDocType String,
+    responseSubRequestId String,
+    responseAeaCode String,
+    responseDocCount Integer,
+    directoryAvilableFlg Integer,
+    fileCount Integer, 
+    // createdBy String
+}
+
+// This entity is populated once the response is received from the
+// Web Service - CDMS. it is releated to the EdmsDownload which
+// refers to the full filename
+entity EdmsLocation {
+    actualDirectory String required, 
+    statusId Integer required,
+    // createdBy String,   
+}
+
+// this next attribute must be updated by a trigger
+// which searches the promised downloads for population
+entity EdmsDownload {
+    actualDirectory String required, 
+    actualFilename String required,
+    // createdBy String,   
+}
+
+entity ServiceResp {
+    rawJson Blob required,
+    documentImage String,
+    // createdBy String, 
+    startDate LocalDate,
+	endDate LocalDate,
+    lastRunBy String,
+    lastRunDur Integer,
+    lastRunDate LocalDate
+}
+
+// Let the RELATIONSHIPS START HERE BRO!!!!!! :-)
+
+relationship OneToMany {
+	OcrSession{sessionWf} to SessionWf 
+}
+
+relationship OneToMany {
+	OcrSession{edmsRequest} to EdmsRequest
+}
+
+relationship OneToMany {
+	EdmsRequest{requestWf} to RequestWf
+}
+
+relationship OneToOne {
+	EdmsResponse{edmsRequest} to EdmsRequest
+}
+
+relationship OneToOne {
+	EdmsLocation{edmsResponse} to EdmsResponse
+}
+
+relationship OneToMany {
+	EdmsLocation{edmsDownload} to EdmsDownload 
+}
+
+relationship OneToOne {
+	ServiceResp{edmsDownload} to EdmsDownload
+}
+
+relationship OneToMany {
+	ServiceResp{serviceWf} to ServiceWf
+}
+
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl // 
+// Set an angular suffix
+angularSuffix * with ocrData

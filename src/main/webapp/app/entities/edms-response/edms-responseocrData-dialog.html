@@ -1,0 +1,116 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEdmsResponseLabel" data-translate="ocrGatewayApp.edmsResponse.home.createOrEditLabel">Create or edit a Edms Response</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.edmsResponse.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.edmsResponse.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.accountNumber" for="field_accountNumber">Account Number</label>
+            <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                    ng-model="vm.edmsResponse.accountNumber"
+                    required />
+            <div ng-show="editForm.accountNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountNumber.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.subRequestId" for="field_subRequestId">Sub Request Id</label>
+            <input type="text" class="form-control" name="subRequestId" id="field_subRequestId"
+                    ng-model="vm.edmsResponse.subRequestId"
+                    required />
+            <div ng-show="editForm.subRequestId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.subRequestId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.requestDocType" for="field_requestDocType">Request Doc Type</label>
+            <input type="text" class="form-control" name="requestDocType" id="field_requestDocType"
+                    ng-model="vm.edmsResponse.requestDocType"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.errorCode" for="field_errorCode">Error Code</label>
+            <input type="text" class="form-control" name="errorCode" id="field_errorCode"
+                    ng-model="vm.edmsResponse.errorCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.errorDescription" for="field_errorDescription">Error Description</label>
+            <input type="text" class="form-control" name="errorDescription" id="field_errorDescription"
+                    ng-model="vm.edmsResponse.errorDescription"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.promisedDirectory" for="field_promisedDirectory">Promised Directory</label>
+            <input type="text" class="form-control" name="promisedDirectory" id="field_promisedDirectory"
+                    ng-model="vm.edmsResponse.promisedDirectory"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.responseDocType" for="field_responseDocType">Response Doc Type</label>
+            <input type="text" class="form-control" name="responseDocType" id="field_responseDocType"
+                    ng-model="vm.edmsResponse.responseDocType"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.responseSubRequestId" for="field_responseSubRequestId">Response Sub Request Id</label>
+            <input type="text" class="form-control" name="responseSubRequestId" id="field_responseSubRequestId"
+                    ng-model="vm.edmsResponse.responseSubRequestId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.responseAeaCode" for="field_responseAeaCode">Response Aea Code</label>
+            <input type="text" class="form-control" name="responseAeaCode" id="field_responseAeaCode"
+                    ng-model="vm.edmsResponse.responseAeaCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.responseDocCount" for="field_responseDocCount">Response Doc Count</label>
+            <input type="number" class="form-control" name="responseDocCount" id="field_responseDocCount"
+                    ng-model="vm.edmsResponse.responseDocCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.directoryAvilableFlg" for="field_directoryAvilableFlg">Directory Avilable Flg</label>
+            <input type="number" class="form-control" name="directoryAvilableFlg" id="field_directoryAvilableFlg"
+                    ng-model="vm.edmsResponse.directoryAvilableFlg"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsResponse.fileCount" for="field_fileCount">File Count</label>
+            <input type="number" class="form-control" name="fileCount" id="field_fileCount"
+                    ng-model="vm.edmsResponse.fileCount"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrGatewayApp.edmsResponse.edmsRequest" for="field_edmsRequest">Edms Request</label>
+            <select class="form-control" id="field_edmsRequest" name="edmsRequest" ng-model="vm.edmsResponse.edmsRequestId" ng-options="edmsRequest.id as edmsRequest.id for edmsRequest in vm.edmsrequests | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

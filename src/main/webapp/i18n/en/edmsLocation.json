@@ -1,0 +1,25 @@
+{
+    "ocrGatewayApp": {
+        "edmsLocation" : {
+            "home": {
+                "title": "Edms Locations",
+                "createLabel": "Create a new Edms Location",
+                "createOrEditLabel": "Create or edit a Edms Location",
+                "search": "Search for Edms Location"
+            },
+            "created": "A new Edms Location is created with identifier {{ param }}",
+            "updated": "A Edms Location is updated with identifier {{ param }}",
+            "deleted": "A Edms Location is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Edms Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Edms Location"
+            },
+            "actualDirectory": "Actual Directory",
+            "statusId": "Status Id",
+            "edmsResponse": "Edms Response",
+            "edmsDownload": "Edms Download"
+        }
+    }
+}

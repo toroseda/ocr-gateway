@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="ocrGatewayApp.edmsLocation.detail.title">Edms Location</span> {{vm.edmsLocation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrGatewayApp.edmsLocation.actualDirectory">Actual Directory</span></dt>
+        <dd>
+            <span>{{vm.edmsLocation.actualDirectory}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsLocation.statusId">Status Id</span></dt>
+        <dd>
+            <span>{{vm.edmsLocation.statusId}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsLocation.edmsResponse">Edms Response</span></dt>
+        <dd>
+            <a ui-sref="edms-responseocrData-detail({id:vm.edmsLocation.edmsResponseId})">{{vm.edmsLocation.edmsResponseId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="edms-locationocrData-detail.edit({id:vm.edmsLocation.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

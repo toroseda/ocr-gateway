@@ -1,0 +1,66 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "ocrSession",
+            "otherEntityName": "ocrSession",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "requestWf",
+            "otherEntityName": "requestWf",
+            "otherEntityRelationshipName": "edmsRequest"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "subRequestId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "areaCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastRunBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastRunDur",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastRunDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170206061926",
+    "entityTableName": "edms_request",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "ocrData"
+}

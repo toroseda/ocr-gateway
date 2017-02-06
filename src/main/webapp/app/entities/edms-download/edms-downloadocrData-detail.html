@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="ocrGatewayApp.edmsDownload.detail.title">Edms Download</span> {{vm.edmsDownload.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrGatewayApp.edmsDownload.actualDirectory">Actual Directory</span></dt>
+        <dd>
+            <span>{{vm.edmsDownload.actualDirectory}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsDownload.actualFilename">Actual Filename</span></dt>
+        <dd>
+            <span>{{vm.edmsDownload.actualFilename}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsDownload.edmsLocation">Edms Location</span></dt>
+        <dd>
+            <a ui-sref="edms-locationocrData-detail({id:vm.edmsDownload.edmsLocationId})">{{vm.edmsDownload.edmsLocationId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="edms-downloadocrData-detail.edit({id:vm.edmsDownload.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

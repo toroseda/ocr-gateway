@@ -1,0 +1,91 @@
+<div>
+    <h2 data-translate="ocrGatewayApp.edmsRequest.home.title">Edms Requests</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="edms-requestocrData.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="ocrGatewayApp.edmsRequest.home.createLabel">
+                        Create new Edms Request
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'ocrGatewayApp.edmsRequest.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.accountNumber">Account Number</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.subRequestId">Sub Request Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.areaCode">Area Code</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.startDate">Start Date</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.endDate">End Date</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.lastRunBy">Last Run By</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.lastRunDur">Last Run Dur</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.lastRunDate">Last Run Date</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsRequest.ocrSession">Ocr Session</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="edmsRequest in vm.edmsRequests track by edmsRequest.id">
+                    <td><a ui-sref="edms-requestocrData-detail({id:edmsRequest.id})">{{edmsRequest.id}}</a></td>
+                    <td>{{edmsRequest.accountNumber}}</td>
+                    <td>{{edmsRequest.subRequestId}}</td>
+                    <td>{{edmsRequest.areaCode}}</td>
+                        <td>{{edmsRequest.startDate | date:'mediumDate'}}</td>
+                        <td>{{edmsRequest.endDate | date:'mediumDate'}}</td>
+                    <td>{{edmsRequest.lastRunBy}}</td>
+                    <td>{{edmsRequest.lastRunDur}}</td>
+                        <td>{{edmsRequest.lastRunDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="ocr-sessionocrData-detail({id:edmsRequest.ocrSessionId})">{{edmsRequest.ocrSessionId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="edms-requestocrData-detail({id:edmsRequest.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="edms-requestocrData.edit({id:edmsRequest.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="edms-requestocrData.delete({id:edmsRequest.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

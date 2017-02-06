@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "edmsDownload",
+            "otherEntityName": "edmsDownload",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "serviceResp"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "serviceWf",
+            "otherEntityName": "serviceWf",
+            "otherEntityRelationshipName": "serviceResp"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rawJson",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "documentImage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastRunBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastRunDur",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastRunDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170206061932",
+    "entityTableName": "service_resp",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "ocrData"
+}

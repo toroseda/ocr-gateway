@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span data-translate="ocrGatewayApp.edmsResponse.detail.title">Edms Response</span> {{vm.edmsResponse.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.accountNumber">Account Number</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.accountNumber}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.subRequestId">Sub Request Id</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.subRequestId}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.requestDocType">Request Doc Type</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.requestDocType}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.errorCode">Error Code</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.errorCode}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.errorDescription">Error Description</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.errorDescription}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.promisedDirectory">Promised Directory</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.promisedDirectory}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.responseDocType">Response Doc Type</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.responseDocType}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.responseSubRequestId">Response Sub Request Id</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.responseSubRequestId}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.responseAeaCode">Response Aea Code</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.responseAeaCode}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.responseDocCount">Response Doc Count</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.responseDocCount}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.directoryAvilableFlg">Directory Avilable Flg</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.directoryAvilableFlg}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.fileCount">File Count</span></dt>
+        <dd>
+            <span>{{vm.edmsResponse.fileCount}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsResponse.edmsRequest">Edms Request</span></dt>
+        <dd>
+            <a ui-sref="edms-requestocrData-detail({id:vm.edmsResponse.edmsRequestId})">{{vm.edmsResponse.edmsRequestId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="edms-responseocrData-detail.edit({id:vm.edmsResponse.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

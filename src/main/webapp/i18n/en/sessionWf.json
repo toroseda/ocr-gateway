@@ -1,0 +1,25 @@
+{
+    "ocrGatewayApp": {
+        "sessionWf" : {
+            "home": {
+                "title": "Session Wfs",
+                "createLabel": "Create a new Session Wf",
+                "createOrEditLabel": "Create or edit a Session Wf",
+                "search": "Search for Session Wf"
+            },
+            "created": "A new Session Wf is created with identifier {{ param }}",
+            "updated": "A Session Wf is updated with identifier {{ param }}",
+            "deleted": "A Session Wf is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Session Wf {{ id }}?"
+            },
+            "detail": {
+                "title": "Session Wf"
+            },
+            "statusId": "Status Id",
+            "wfTypeId": "Wf Type Id",
+            "updatedBy": "Updated By",
+            "ocrSession": "Ocr Session"
+        }
+    }
+}

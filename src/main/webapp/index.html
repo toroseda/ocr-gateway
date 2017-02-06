@@ -12,6 +12,9 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+    <link rel="stylesheet" href="bower_components/angular-object-diff/dist/angular-object-diff.css">
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
@@ -51,6 +54,8 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/sockjs-client/dist/sockjs.js"></script>
     <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+    <script src="bower_components/arrive/src/arrive.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -69,6 +74,9 @@
     <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="bower_components/angular-object-diff/dist/angular-object-diff.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 
@@ -94,7 +102,70 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/session-wf/session-wfocrData-dialog.controller.js"></script>
+    <script src="app/entities/session-wf/session-wfocrData-detail.controller.js"></script>
+    <script src="app/entities/session-wf/session-wfocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/session-wf/session-wfocrData.state.js"></script>
+    <script src="app/entities/session-wf/session-wfocrData.controller.js"></script>
+    <script src="app/entities/session-wf/session-wf.service.js"></script>
+    <script src="app/entities/session-wf/session-wf.search.service.js"></script>
+    <script src="app/entities/service-wf/service-wfocrData-dialog.controller.js"></script>
+    <script src="app/entities/service-wf/service-wfocrData-detail.controller.js"></script>
+    <script src="app/entities/service-wf/service-wfocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/service-wf/service-wfocrData.state.js"></script>
+    <script src="app/entities/service-wf/service-wfocrData.controller.js"></script>
+    <script src="app/entities/service-wf/service-wf.service.js"></script>
+    <script src="app/entities/service-wf/service-wf.search.service.js"></script>
+    <script src="app/entities/service-resp/service-respocrData-dialog.controller.js"></script>
+    <script src="app/entities/service-resp/service-respocrData-detail.controller.js"></script>
+    <script src="app/entities/service-resp/service-respocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/service-resp/service-respocrData.state.js"></script>
+    <script src="app/entities/service-resp/service-respocrData.controller.js"></script>
+    <script src="app/entities/service-resp/service-resp.service.js"></script>
+    <script src="app/entities/service-resp/service-resp.search.service.js"></script>
+    <script src="app/entities/request-wf/request-wfocrData-dialog.controller.js"></script>
+    <script src="app/entities/request-wf/request-wfocrData-detail.controller.js"></script>
+    <script src="app/entities/request-wf/request-wfocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/request-wf/request-wfocrData.state.js"></script>
+    <script src="app/entities/request-wf/request-wfocrData.controller.js"></script>
+    <script src="app/entities/request-wf/request-wf.service.js"></script>
+    <script src="app/entities/request-wf/request-wf.search.service.js"></script>
+    <script src="app/entities/ocr-session/ocr-sessionocrData-dialog.controller.js"></script>
+    <script src="app/entities/ocr-session/ocr-sessionocrData-detail.controller.js"></script>
+    <script src="app/entities/ocr-session/ocr-sessionocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/ocr-session/ocr-sessionocrData.state.js"></script>
+    <script src="app/entities/ocr-session/ocr-sessionocrData.controller.js"></script>
+    <script src="app/entities/ocr-session/ocr-session.service.js"></script>
+    <script src="app/entities/ocr-session/ocr-session.search.service.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/edms-response/edms-responseocrData-dialog.controller.js"></script>
+    <script src="app/entities/edms-response/edms-responseocrData-detail.controller.js"></script>
+    <script src="app/entities/edms-response/edms-responseocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/edms-response/edms-responseocrData.state.js"></script>
+    <script src="app/entities/edms-response/edms-responseocrData.controller.js"></script>
+    <script src="app/entities/edms-response/edms-response.service.js"></script>
+    <script src="app/entities/edms-response/edms-response.search.service.js"></script>
+    <script src="app/entities/edms-request/edms-requestocrData-dialog.controller.js"></script>
+    <script src="app/entities/edms-request/edms-requestocrData-detail.controller.js"></script>
+    <script src="app/entities/edms-request/edms-requestocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/edms-request/edms-requestocrData.state.js"></script>
+    <script src="app/entities/edms-request/edms-requestocrData.controller.js"></script>
+    <script src="app/entities/edms-request/edms-request.service.js"></script>
+    <script src="app/entities/edms-request/edms-request.search.service.js"></script>
+    <script src="app/entities/edms-location/edms-locationocrData-dialog.controller.js"></script>
+    <script src="app/entities/edms-location/edms-locationocrData-detail.controller.js"></script>
+    <script src="app/entities/edms-location/edms-locationocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/edms-location/edms-locationocrData.state.js"></script>
+    <script src="app/entities/edms-location/edms-locationocrData.controller.js"></script>
+    <script src="app/entities/edms-location/edms-location.service.js"></script>
+    <script src="app/entities/edms-location/edms-location.search.service.js"></script>
+    <script src="app/entities/edms-download/edms-downloadocrData-dialog.controller.js"></script>
+    <script src="app/entities/edms-download/edms-downloadocrData-detail.controller.js"></script>
+    <script src="app/entities/edms-download/edms-downloadocrData-delete-dialog.controller.js"></script>
+    <script src="app/entities/edms-download/edms-downloadocrData.state.js"></script>
+    <script src="app/entities/edms-download/edms-downloadocrData.controller.js"></script>
+    <script src="app/entities/edms-download/edms-download.service.js"></script>
+    <script src="app/entities/edms-download/edms-download.search.service.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>
@@ -132,6 +203,7 @@
     <script src="app/blocks/config/localstorage.config.js"></script>
     <script src="app/blocks/config/http.config.js"></script>
     <script src="app/blocks/config/compile.config.js"></script>
+    <script src="app/blocks/config/bootstrap-material.config.js"></script>
     <script src="app/blocks/config/alert.config.js"></script>
     <script src="app/app.state.js"></script>
     <script src="app/app.constants.js"></script>
@@ -157,6 +229,10 @@
     <script src="app/admin/gateway/gateway.state.js"></script>
     <script src="app/admin/gateway/gateway.routes.service.js"></script>
     <script src="app/admin/gateway/gateway.controller.js"></script>
+    <script src="app/admin/entity-audit/entity-audit.state.js"></script>
+    <script src="app/admin/entity-audit/entity-audit.service.js"></script>
+    <script src="app/admin/entity-audit/entity-audit.detail.controller.js"></script>
+    <script src="app/admin/entity-audit/entity-audit.controller.js"></script>
     <script src="app/admin/docs/docs.state.js"></script>
     <script src="app/admin/configuration/configuration.state.js"></script>
     <script src="app/admin/configuration/configuration.service.js"></script>

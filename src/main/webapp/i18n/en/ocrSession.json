@@ -1,0 +1,30 @@
+{
+    "ocrGatewayApp": {
+        "ocrSession" : {
+            "home": {
+                "title": "Ocr Sessions",
+                "createLabel": "Create a new Ocr Session",
+                "createOrEditLabel": "Create or edit a Ocr Session",
+                "search": "Search for Ocr Session"
+            },
+            "created": "A new Ocr Session is created with identifier {{ param }}",
+            "updated": "A Ocr Session is updated with identifier {{ param }}",
+            "deleted": "A Ocr Session is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ocr Session {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocr Session"
+            },
+            "name": "Name",
+            "description": "Description",
+            "statusId": "Status Id",
+            "serverFilePath": "Server File Path",
+            "filename": "Filename",
+            "requestData": "Request Data",
+            "updatedBy": "Updated By",
+            "sessionWf": "Session Wf",
+            "edmsRequest": "Edms Request"
+        }
+    }
+}

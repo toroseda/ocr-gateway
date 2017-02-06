@@ -1,0 +1,99 @@
+<div>
+    <h2 data-translate="ocrGatewayApp.edmsResponse.home.title">Edms Responses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="edms-responseocrData.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="ocrGatewayApp.edmsResponse.home.createLabel">
+                        Create new Edms Response
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'ocrGatewayApp.edmsResponse.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.accountNumber">Account Number</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.subRequestId">Sub Request Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.requestDocType">Request Doc Type</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.errorCode">Error Code</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.errorDescription">Error Description</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.promisedDirectory">Promised Directory</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.responseDocType">Response Doc Type</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.responseSubRequestId">Response Sub Request Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.responseAeaCode">Response Aea Code</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.responseDocCount">Response Doc Count</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.directoryAvilableFlg">Directory Avilable Flg</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.fileCount">File Count</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsResponse.edmsRequest">Edms Request</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="edmsResponse in vm.edmsResponses track by edmsResponse.id">
+                    <td><a ui-sref="edms-responseocrData-detail({id:edmsResponse.id})">{{edmsResponse.id}}</a></td>
+                    <td>{{edmsResponse.accountNumber}}</td>
+                    <td>{{edmsResponse.subRequestId}}</td>
+                    <td>{{edmsResponse.requestDocType}}</td>
+                    <td>{{edmsResponse.errorCode}}</td>
+                    <td>{{edmsResponse.errorDescription}}</td>
+                    <td>{{edmsResponse.promisedDirectory}}</td>
+                    <td>{{edmsResponse.responseDocType}}</td>
+                    <td>{{edmsResponse.responseSubRequestId}}</td>
+                    <td>{{edmsResponse.responseAeaCode}}</td>
+                    <td>{{edmsResponse.responseDocCount}}</td>
+                    <td>{{edmsResponse.directoryAvilableFlg}}</td>
+                    <td>{{edmsResponse.fileCount}}</td>
+                    <td>
+                        <a ui-sref="edms-requestocrData-detail({id:edmsResponse.edmsRequestId})">{{edmsResponse.edmsRequestId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="edms-responseocrData-detail({id:edmsResponse.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="edms-responseocrData.edit({id:edmsResponse.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="edms-responseocrData.delete({id:edmsResponse.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

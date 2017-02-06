@@ -1,0 +1,92 @@
+<div>
+    <h2 data-translate="ocrGatewayApp.serviceResp.home.title">Service Resps</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="service-respocrData.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="ocrGatewayApp.serviceResp.home.createLabel">
+                        Create new Service Resp
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'ocrGatewayApp.serviceResp.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.rawJson">Raw Json</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.documentImage">Document Image</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.startDate">Start Date</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.endDate">End Date</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.lastRunBy">Last Run By</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.lastRunDur">Last Run Dur</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.lastRunDate">Last Run Date</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceResp.edmsDownload">Edms Download</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="serviceResp in vm.serviceResps track by serviceResp.id">
+                    <td><a ui-sref="service-respocrData-detail({id:serviceResp.id})">{{serviceResp.id}}</a></td>
+                    <td>
+                        <a ng-if="serviceResp.rawJson" ng-click="vm.openFile(serviceResp.rawJsonContentType, serviceResp.rawJson)" data-translate="entity.action.open">open</a>
+                        <span ng-if="serviceResp.rawJson">{{serviceResp.rawJsonContentType}}, {{vm.byteSize(serviceResp.rawJson)}}</span>
+                    </td>
+                    <td>{{serviceResp.documentImage}}</td>
+                        <td>{{serviceResp.startDate | date:'mediumDate'}}</td>
+                        <td>{{serviceResp.endDate | date:'mediumDate'}}</td>
+                    <td>{{serviceResp.lastRunBy}}</td>
+                    <td>{{serviceResp.lastRunDur}}</td>
+                        <td>{{serviceResp.lastRunDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="edms-downloadocrData-detail({id:serviceResp.edmsDownloadId})">{{serviceResp.edmsDownloadId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="service-respocrData-detail({id:serviceResp.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="service-respocrData.edit({id:serviceResp.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="service-respocrData.delete({id:serviceResp.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

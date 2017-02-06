@@ -1,0 +1,24 @@
+{
+    "ocrGatewayApp": {
+        "edmsDownload" : {
+            "home": {
+                "title": "Edms Downloads",
+                "createLabel": "Create a new Edms Download",
+                "createOrEditLabel": "Create or edit a Edms Download",
+                "search": "Search for Edms Download"
+            },
+            "created": "A new Edms Download is created with identifier {{ param }}",
+            "updated": "A Edms Download is updated with identifier {{ param }}",
+            "deleted": "A Edms Download is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Edms Download {{ id }}?"
+            },
+            "detail": {
+                "title": "Edms Download"
+            },
+            "actualDirectory": "Actual Directory",
+            "actualFilename": "Actual Filename",
+            "edmsLocation": "Edms Location"
+        }
+    }
+}

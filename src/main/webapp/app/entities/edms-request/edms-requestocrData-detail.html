@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="ocrGatewayApp.edmsRequest.detail.title">Edms Request</span> {{vm.edmsRequest.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.accountNumber">Account Number</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.accountNumber}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.subRequestId">Sub Request Id</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.subRequestId}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.areaCode">Area Code</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.areaCode}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.startDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.endDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.lastRunBy">Last Run By</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.lastRunBy}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.lastRunDur">Last Run Dur</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.lastRunDur}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.lastRunDate">Last Run Date</span></dt>
+        <dd>
+            <span>{{vm.edmsRequest.lastRunDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.edmsRequest.ocrSession">Ocr Session</span></dt>
+        <dd>
+            <a ui-sref="ocr-sessionocrData-detail({id:vm.edmsRequest.ocrSessionId})">{{vm.edmsRequest.ocrSessionId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="edms-requestocrData-detail.edit({id:vm.edmsRequest.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

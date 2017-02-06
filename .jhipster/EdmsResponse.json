@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "edmsRequest",
+            "otherEntityName": "edmsRequest",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "edmsResponse"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "subRequestId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "requestDocType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "errorCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "errorDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "promisedDirectory",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseDocType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseSubRequestId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseAeaCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseDocCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "directoryAvilableFlg",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fileCount",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170206061929",
+    "entityTableName": "edms_response",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "ocrData"
+}

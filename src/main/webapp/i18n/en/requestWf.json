@@ -1,0 +1,24 @@
+{
+    "ocrGatewayApp": {
+        "requestWf" : {
+            "home": {
+                "title": "Request Wfs",
+                "createLabel": "Create a new Request Wf",
+                "createOrEditLabel": "Create or edit a Request Wf",
+                "search": "Search for Request Wf"
+            },
+            "created": "A new Request Wf is created with identifier {{ param }}",
+            "updated": "A Request Wf is updated with identifier {{ param }}",
+            "deleted": "A Request Wf is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Request Wf {{ id }}?"
+            },
+            "detail": {
+                "title": "Request Wf"
+            },
+            "statusId": "Status Id",
+            "updatedBy": "Updated By",
+            "edmsRequest": "Edms Request"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEdmsDownloadLabel" data-translate="ocrGatewayApp.edmsDownload.home.createOrEditLabel">Create or edit a Edms Download</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.edmsDownload.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.edmsDownload.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsDownload.actualDirectory" for="field_actualDirectory">Actual Directory</label>
+            <input type="text" class="form-control" name="actualDirectory" id="field_actualDirectory"
+                    ng-model="vm.edmsDownload.actualDirectory"
+                    required />
+            <div ng-show="editForm.actualDirectory.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.actualDirectory.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsDownload.actualFilename" for="field_actualFilename">Actual Filename</label>
+            <input type="text" class="form-control" name="actualFilename" id="field_actualFilename"
+                    ng-model="vm.edmsDownload.actualFilename"
+                    required />
+            <div ng-show="editForm.actualFilename.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.actualFilename.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrGatewayApp.edmsDownload.edmsLocation" for="field_edmsLocation">Edms Location</label>
+            <select class="form-control" id="field_edmsLocation" name="edmsLocation" ng-model="vm.edmsDownload.edmsLocationId" ng-options="edmsLocation.id as edmsLocation.id for edmsLocation in vm.edmslocations"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

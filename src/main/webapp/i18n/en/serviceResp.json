@@ -1,0 +1,30 @@
+{
+    "ocrGatewayApp": {
+        "serviceResp" : {
+            "home": {
+                "title": "Service Resps",
+                "createLabel": "Create a new Service Resp",
+                "createOrEditLabel": "Create or edit a Service Resp",
+                "search": "Search for Service Resp"
+            },
+            "created": "A new Service Resp is created with identifier {{ param }}",
+            "updated": "A Service Resp is updated with identifier {{ param }}",
+            "deleted": "A Service Resp is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Resp {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Resp"
+            },
+            "rawJson": "Raw Json",
+            "documentImage": "Document Image",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "lastRunBy": "Last Run By",
+            "lastRunDur": "Last Run Dur",
+            "lastRunDate": "Last Run Date",
+            "edmsDownload": "Edms Download",
+            "serviceWf": "Service Wf"
+        }
+    }
+}

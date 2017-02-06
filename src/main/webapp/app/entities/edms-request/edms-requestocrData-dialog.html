@@ -1,0 +1,110 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEdmsRequestLabel" data-translate="ocrGatewayApp.edmsRequest.home.createOrEditLabel">Create or edit a Edms Request</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.edmsRequest.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.edmsRequest.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.accountNumber" for="field_accountNumber">Account Number</label>
+            <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                    ng-model="vm.edmsRequest.accountNumber"
+                    required />
+            <div ng-show="editForm.accountNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountNumber.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.subRequestId" for="field_subRequestId">Sub Request Id</label>
+            <input type="text" class="form-control" name="subRequestId" id="field_subRequestId"
+                    ng-model="vm.edmsRequest.subRequestId"
+                    required />
+            <div ng-show="editForm.subRequestId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.subRequestId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.areaCode" for="field_areaCode">Area Code</label>
+            <input type="text" class="form-control" name="areaCode" id="field_areaCode"
+                    ng-model="vm.edmsRequest.areaCode"
+                    required />
+            <div ng-show="editForm.areaCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.areaCode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.startDate" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.edmsRequest.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.endDate" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.edmsRequest.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.lastRunBy" for="field_lastRunBy">Last Run By</label>
+            <input type="text" class="form-control" name="lastRunBy" id="field_lastRunBy"
+                    ng-model="vm.edmsRequest.lastRunBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.lastRunDur" for="field_lastRunDur">Last Run Dur</label>
+            <input type="number" class="form-control" name="lastRunDur" id="field_lastRunDur"
+                    ng-model="vm.edmsRequest.lastRunDur"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.lastRunDate" for="field_lastRunDate">Last Run Date</label>
+                <div class="input-group">
+                    <input id="field_lastRunDate" type="text" class="form-control" name="lastRunDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.edmsRequest.lastRunDate" is-open="vm.datePickerOpenStatus.lastRunDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastRunDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrGatewayApp.edmsRequest.ocrSession" for="field_ocrSession">Ocr Session</label>
+            <select class="form-control" id="field_ocrSession" name="ocrSession" ng-model="vm.edmsRequest.ocrSessionId" ng-options="ocrSession.id as ocrSession.id for ocrSession in vm.ocrsessions"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
