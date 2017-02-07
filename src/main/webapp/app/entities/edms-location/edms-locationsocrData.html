@@ -37,7 +37,7 @@
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="ocrGatewayApp.edmsLocation.actualDirectory">Actual Directory</span></th>
-                    <th><span data-translate="ocrGatewayApp.edmsLocation.statusId">Status Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.edmsLocation.status">Status</span></th>
                     <th><span data-translate="ocrGatewayApp.edmsLocation.edmsResponse">Edms Response</span></th>
                     <th></th>
                 </tr>
@@ -46,7 +46,7 @@
                 <tr ng-repeat="edmsLocation in vm.edmsLocations track by edmsLocation.id">
                     <td><a ui-sref="edms-locationocrData-detail({id:edmsLocation.id})">{{edmsLocation.id}}</a></td>
                     <td>{{edmsLocation.actualDirectory}}</td>
-                    <td>{{edmsLocation.statusId}}</td>
+                    <td data-translate="{{'ocrGatewayApp.Status.' + edmsLocation.status}}">{{edmsLocation.status}}</td>
                     <td>
                         <a ui-sref="edms-responseocrData-detail({id:edmsLocation.edmsResponseId})">{{edmsLocation.edmsResponseId}}</a>
                     </td>

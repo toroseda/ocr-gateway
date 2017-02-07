@@ -16,7 +16,8 @@
             "detail": {
                 "title": "Service Wf"
             },
-            "statusId": "Status Id",
+            "status": "Status",
+            "wfStatus": "Wf Status",
             "updatedBy": "Updated By",
             "serviceResp": "Service Resp"
         }

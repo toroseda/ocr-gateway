@@ -52,8 +52,8 @@
         <div class="form-group">
             <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.startDate" for="field_startDate">Start Date</label>
                 <div class="input-group">
-                    <input id="field_startDate" type="text" class="form-control" name="startDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.edmsRequest.startDate" is-open="vm.datePickerOpenStatus.startDate"
-                    />
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.edmsRequest.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                      />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
@@ -62,8 +62,8 @@
         <div class="form-group">
             <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.endDate" for="field_endDate">End Date</label>
                 <div class="input-group">
-                    <input id="field_endDate" type="text" class="form-control" name="endDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.edmsRequest.endDate" is-open="vm.datePickerOpenStatus.endDate"
-                    />
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.edmsRequest.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                      />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
@@ -84,8 +84,8 @@
         <div class="form-group">
             <label class="control-label" data-translate="ocrGatewayApp.edmsRequest.lastRunDate" for="field_lastRunDate">Last Run Date</label>
                 <div class="input-group">
-                    <input id="field_lastRunDate" type="text" class="form-control" name="lastRunDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.edmsRequest.lastRunDate" is-open="vm.datePickerOpenStatus.lastRunDate"
-                    />
+                    <input id="field_lastRunDate" type="text" class="form-control" name="lastRunDate" datetime-picker="{{dateformat}}" ng-model="vm.edmsRequest.lastRunDate" is-open="vm.datePickerOpenStatus.lastRunDate"
+                      />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastRunDate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>

@@ -17,22 +17,42 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity SessionWf.
+        Added the entity EdmsRequest.
     -->
-    <changeSet id="20170206061925-1" author="jhipster">
-        <createTable tableName="session_wf">
+    <changeSet id="20170207133929-1" author="jhipster">
+        <createTable tableName="edms_request">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="status_id" type="integer">
+            <column name="account_number" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="wf_type_id" type="integer">
+            <column name="sub_request_id" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="updated_by" type="varchar(255)">
+            <column name="area_code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="start_date" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="end_date" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="last_run_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="last_run_dur" type="integer">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="last_run_date" type="timestamp">
                 <constraints nullable="true" />
             </column>
             
@@ -50,6 +70,9 @@
             <column name="last_modified_date" type="timestamp"/>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
+        <dropDefaultValue tableName="edms_request" columnName="start_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="edms_request" columnName="end_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="edms_request" columnName="last_run_date" columnDataType="datetime"/>
         
     </changeSet>
 </databaseChangeLog>

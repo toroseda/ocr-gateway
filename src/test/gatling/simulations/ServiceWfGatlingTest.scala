@@ -68,7 +68,7 @@ class ServiceWfGatlingTest extends Simulation {
             .exec(http("Create new serviceWf")
             .post("/api/service-wfs")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "statusId":"0", "updatedBy":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "status":null, "wfStatus":null, "updatedBy":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_serviceWf_url"))).exitHereIfFailed
             .pause(10)

@@ -55,11 +55,11 @@
                         <span ng-if="serviceResp.rawJson">{{serviceResp.rawJsonContentType}}, {{vm.byteSize(serviceResp.rawJson)}}</span>
                     </td>
                     <td>{{serviceResp.documentImage}}</td>
-                        <td>{{serviceResp.startDate | date:'mediumDate'}}</td>
-                        <td>{{serviceResp.endDate | date:'mediumDate'}}</td>
+                    <td>{{serviceResp.startDate | date:'medium'}}</td>
+                    <td>{{serviceResp.endDate | date:'medium'}}</td>
                     <td>{{serviceResp.lastRunBy}}</td>
                     <td>{{serviceResp.lastRunDur}}</td>
-                        <td>{{serviceResp.lastRunDate | date:'mediumDate'}}</td>
+                    <td>{{serviceResp.lastRunDate | date:'medium'}}</td>
                     <td>
                         <a ui-sref="edms-downloadocrData-detail({id:serviceResp.edmsDownloadId})">{{serviceResp.edmsDownloadId}}</a>
                     </td>

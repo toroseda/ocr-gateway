@@ -9,6 +9,10 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
+
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.WfStatus;
+
 /**
  * A SessionWf.
  */
@@ -25,12 +29,14 @@ public class SessionWf extends AbstractAuditingEntity implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "status_id", nullable = false)
-    private Integer statusId;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private Status status;
 
     @NotNull
-    @Column(name = "wf_type_id", nullable = false)
-    private Integer wfTypeId;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "wf_status", nullable = false)
+    private WfStatus wfStatus;
 
     @Column(name = "updated_by")
     private String updatedBy;
@@ -46,30 +52,30 @@ public class SessionWf extends AbstractAuditingEntity implements Serializable {
         this.id = id;
     }
 
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public SessionWf statusId(Integer statusId) {
-        this.statusId = statusId;
+    public SessionWf status(Status status) {
+        this.status = status;
         return this;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
-    public Integer getWfTypeId() {
-        return wfTypeId;
+    public WfStatus getWfStatus() {
+        return wfStatus;
     }
 
-    public SessionWf wfTypeId(Integer wfTypeId) {
-        this.wfTypeId = wfTypeId;
+    public SessionWf wfStatus(WfStatus wfStatus) {
+        this.wfStatus = wfStatus;
         return this;
     }
 
-    public void setWfTypeId(Integer wfTypeId) {
-        this.wfTypeId = wfTypeId;
+    public void setWfStatus(WfStatus wfStatus) {
+        this.wfStatus = wfStatus;
     }
 
     public String getUpdatedBy() {
@@ -122,8 +128,8 @@ public class SessionWf extends AbstractAuditingEntity implements Serializable {
     public String toString() {
         return "SessionWf{" +
             "id=" + id +
-            ", statusId='" + statusId + "'" +
-            ", wfTypeId='" + wfTypeId + "'" +
+            ", status='" + status + "'" +
+            ", wfStatus='" + wfStatus + "'" +
             ", updatedBy='" + updatedBy + "'" +
             '}';
     }

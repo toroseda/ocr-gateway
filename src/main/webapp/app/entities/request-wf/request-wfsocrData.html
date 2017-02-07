@@ -36,7 +36,8 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="ocrGatewayApp.requestWf.statusId">Status Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.requestWf.status">Status</span></th>
+                    <th><span data-translate="ocrGatewayApp.requestWf.wfStatus">Wf Status</span></th>
                     <th><span data-translate="ocrGatewayApp.requestWf.updatedBy">Updated By</span></th>
                     <th><span data-translate="ocrGatewayApp.requestWf.edmsRequest">Edms Request</span></th>
                     <th></th>
@@ -45,7 +46,8 @@
             <tbody>
                 <tr ng-repeat="requestWf in vm.requestWfs track by requestWf.id">
                     <td><a ui-sref="request-wfocrData-detail({id:requestWf.id})">{{requestWf.id}}</a></td>
-                    <td>{{requestWf.statusId}}</td>
+                    <td data-translate="{{'ocrGatewayApp.Status.' + requestWf.status}}">{{requestWf.status}}</td>
+                    <td data-translate="{{'ocrGatewayApp.WfStatus.' + requestWf.wfStatus}}">{{requestWf.wfStatus}}</td>
                     <td>{{requestWf.updatedBy}}</td>
                     <td>
                         <a ui-sref="edms-requestocrData-detail({id:requestWf.edmsRequestId})">{{requestWf.edmsRequestId}}</a>

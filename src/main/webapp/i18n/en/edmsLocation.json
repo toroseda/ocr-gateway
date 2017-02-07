@@ -17,7 +17,7 @@
                 "title": "Edms Location"
             },
             "actualDirectory": "Actual Directory",
-            "statusId": "Status Id",
+            "status": "Status",
             "edmsResponse": "Edms Response",
             "edmsDownload": "Edms Download"
         }

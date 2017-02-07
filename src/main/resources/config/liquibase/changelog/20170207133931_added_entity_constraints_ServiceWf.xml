@@ -6,7 +6,7 @@
     <!--
         Added the constraints for entity ServiceWf.
     -->
-    <changeSet id="20170206061928-2" author="jhipster">
+    <changeSet id="20170207133931-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="service_resp_id"
                                  baseTableName="service_wf"

@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
 
 /**
  * A DTO for the EdmsLocation entity.
@@ -18,7 +19,7 @@ public class EdmsLocationDTO extends AbstractAuditingDTO implements Serializable
     private String actualDirectory;
 
     @NotNull
-    private Integer statusId;
+    private Status status;
 
 
     private Long edmsResponseId;
@@ -37,12 +38,12 @@ public class EdmsLocationDTO extends AbstractAuditingDTO implements Serializable
     public void setActualDirectory(String actualDirectory) {
         this.actualDirectory = actualDirectory;
     }
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Long getEdmsResponseId() {
@@ -79,7 +80,7 @@ public class EdmsLocationDTO extends AbstractAuditingDTO implements Serializable
         return "EdmsLocationDTO{" +
             "id=" + id +
             ", actualDirectory='" + actualDirectory + "'" +
-            ", statusId='" + statusId + "'" +
+            ", status='" + status + "'" +
             '}';
     }
 }

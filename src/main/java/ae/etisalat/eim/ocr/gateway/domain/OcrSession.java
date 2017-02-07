@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
+
 /**
  * A OcrSession.
  */
@@ -36,8 +38,9 @@ public class OcrSession extends AbstractAuditingEntity implements Serializable {
     private String description;
 
     @NotNull
-    @Column(name = "status_id", nullable = false)
-    private Integer statusId;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private Status status;
 
     @Column(name = "server_file_path")
     private String serverFilePath;
@@ -101,17 +104,17 @@ public class OcrSession extends AbstractAuditingEntity implements Serializable {
         this.description = description;
     }
 
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public OcrSession statusId(Integer statusId) {
-        this.statusId = statusId;
+    public OcrSession status(Status status) {
+        this.status = status;
         return this;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public String getServerFilePath() {
@@ -255,7 +258,7 @@ public class OcrSession extends AbstractAuditingEntity implements Serializable {
             "id=" + id +
             ", name='" + name + "'" +
             ", description='" + description + "'" +
-            ", statusId='" + statusId + "'" +
+            ", status='" + status + "'" +
             ", serverFilePath='" + serverFilePath + "'" +
             ", filename='" + filename + "'" +
             ", requestData='" + requestData + "'" +

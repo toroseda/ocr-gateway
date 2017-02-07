@@ -36,8 +36,8 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="ocrGatewayApp.sessionWf.statusId">Status Id</span></th>
-                    <th><span data-translate="ocrGatewayApp.sessionWf.wfTypeId">Wf Type Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.sessionWf.status">Status</span></th>
+                    <th><span data-translate="ocrGatewayApp.sessionWf.wfStatus">Wf Status</span></th>
                     <th><span data-translate="ocrGatewayApp.sessionWf.updatedBy">Updated By</span></th>
                     <th><span data-translate="ocrGatewayApp.sessionWf.ocrSession">Ocr Session</span></th>
                     <th></th>
@@ -46,8 +46,8 @@
             <tbody>
                 <tr ng-repeat="sessionWf in vm.sessionWfs track by sessionWf.id">
                     <td><a ui-sref="session-wfocrData-detail({id:sessionWf.id})">{{sessionWf.id}}</a></td>
-                    <td>{{sessionWf.statusId}}</td>
-                    <td>{{sessionWf.wfTypeId}}</td>
+                    <td data-translate="{{'ocrGatewayApp.Status.' + sessionWf.status}}">{{sessionWf.status}}</td>
+                    <td data-translate="{{'ocrGatewayApp.WfStatus.' + sessionWf.wfStatus}}">{{sessionWf.wfStatus}}</td>
                     <td>{{sessionWf.updatedBy}}</td>
                     <td>
                         <a ui-sref="ocr-sessionocrData-detail({id:sessionWf.ocrSessionId})">{{sessionWf.ocrSessionId}}</a>

@@ -26,6 +26,8 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('serviceWf');
+                    $translatePartialLoader.addPart('status');
+                    $translatePartialLoader.addPart('wfStatus');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
@@ -48,6 +50,8 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('serviceWf');
+                    $translatePartialLoader.addPart('status');
+                    $translatePartialLoader.addPart('wfStatus');
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'ServiceWf', function($stateParams, ServiceWf) {
@@ -104,7 +108,8 @@
                     resolve: {
                         entity: function () {
                             return {
-                                statusId: null,
+                                status: null,
+                                wfStatus: null,
                                 updatedBy: null,
                                 id: null
                             };

@@ -24,10 +24,11 @@
             ]
         }
     ],
-    "changelogDate": "20170206061931",
+    "changelogDate": "20170207133934",
     "entityTableName": "edms_download",
     "dto": "mapstruct",
     "pagination": "no",
     "service": "serviceImpl",
-    "angularJSSuffix": "ocrData"
+    "angularJSSuffix": "ocrData",
+    "enableEntityAudit": true
 }

@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -41,10 +41,10 @@ public class EdmsRequest extends AbstractAuditingEntity implements Serializable 
     private String areaCode;
 
     @Column(name = "start_date")
-    private LocalDate startDate;
+    private ZonedDateTime startDate;
 
     @Column(name = "end_date")
-    private LocalDate endDate;
+    private ZonedDateTime endDate;
 
     @Column(name = "last_run_by")
     private String lastRunBy;
@@ -53,7 +53,7 @@ public class EdmsRequest extends AbstractAuditingEntity implements Serializable 
     private Integer lastRunDur;
 
     @Column(name = "last_run_date")
-    private LocalDate lastRunDate;
+    private ZonedDateTime lastRunDate;
 
     @ManyToOne
     private OcrSession ocrSession;
@@ -110,29 +110,29 @@ public class EdmsRequest extends AbstractAuditingEntity implements Serializable 
         this.areaCode = areaCode;
     }
 
-    public LocalDate getStartDate() {
+    public ZonedDateTime getStartDate() {
         return startDate;
     }
 
-    public EdmsRequest startDate(LocalDate startDate) {
+    public EdmsRequest startDate(ZonedDateTime startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(ZonedDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public ZonedDateTime getEndDate() {
         return endDate;
     }
 
-    public EdmsRequest endDate(LocalDate endDate) {
+    public EdmsRequest endDate(ZonedDateTime endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(ZonedDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -162,16 +162,16 @@ public class EdmsRequest extends AbstractAuditingEntity implements Serializable 
         this.lastRunDur = lastRunDur;
     }
 
-    public LocalDate getLastRunDate() {
+    public ZonedDateTime getLastRunDate() {
         return lastRunDate;
     }
 
-    public EdmsRequest lastRunDate(LocalDate lastRunDate) {
+    public EdmsRequest lastRunDate(ZonedDateTime lastRunDate) {
         this.lastRunDate = lastRunDate;
         return this;
     }
 
-    public void setLastRunDate(LocalDate lastRunDate) {
+    public void setLastRunDate(ZonedDateTime lastRunDate) {
         this.lastRunDate = lastRunDate;
     }
 

@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
+
 /**
  * A EdmsLocation.
  */
@@ -32,8 +34,9 @@ public class EdmsLocation extends AbstractAuditingEntity implements Serializable
     private String actualDirectory;
 
     @NotNull
-    @Column(name = "status_id", nullable = false)
-    private Integer statusId;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private Status status;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -65,17 +68,17 @@ public class EdmsLocation extends AbstractAuditingEntity implements Serializable
         this.actualDirectory = actualDirectory;
     }
 
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public EdmsLocation statusId(Integer statusId) {
-        this.statusId = statusId;
+    public EdmsLocation status(Status status) {
+        this.status = status;
         return this;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public EdmsResponse getEdmsResponse() {
@@ -141,7 +144,7 @@ public class EdmsLocation extends AbstractAuditingEntity implements Serializable
         return "EdmsLocation{" +
             "id=" + id +
             ", actualDirectory='" + actualDirectory + "'" +
-            ", statusId='" + statusId + "'" +
+            ", status='" + status + "'" +
             '}';
     }
 }

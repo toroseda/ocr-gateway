@@ -68,7 +68,7 @@ class OcrSessionGatlingTest extends Simulation {
             .exec(http("Create new ocrSession")
             .post("/api/ocr-sessions")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "description":"SAMPLE_TEXT", "statusId":"0", "serverFilePath":"SAMPLE_TEXT", "filename":"SAMPLE_TEXT", "requestData":null, "updatedBy":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "description":"SAMPLE_TEXT", "status":null, "serverFilePath":"SAMPLE_TEXT", "filename":"SAMPLE_TEXT", "requestData":null, "updatedBy":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_ocrSession_url"))).exitHereIfFailed
             .pause(10)

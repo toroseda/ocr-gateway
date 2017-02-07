@@ -25,17 +25,19 @@
             ]
         },
         {
-            "fieldName": "statusId",
-            "fieldType": "Integer",
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "DEFINED,LOADED,VALIDATED,READY,REQUESTED,WAITING,PROCESSING,COMPLETED,PROMISED,FULFILLED,PROCESSED,RESPONDED",
             "fieldValidateRules": [
                 "required"
             ]
         }
     ],
-    "changelogDate": "20170206061930",
+    "changelogDate": "20170207133933",
     "entityTableName": "edms_location",
     "dto": "mapstruct",
     "pagination": "no",
     "service": "serviceImpl",
-    "angularJSSuffix": "ocrData"
+    "angularJSSuffix": "ocrData",
+    "enableEntityAudit": true
 }

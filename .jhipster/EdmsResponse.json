@@ -66,10 +66,11 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170206061929",
+    "changelogDate": "20170207133932",
     "entityTableName": "edms_response",
     "dto": "mapstruct",
     "pagination": "no",
     "service": "serviceImpl",
-    "angularJSSuffix": "ocrData"
+    "angularJSSuffix": "ocrData",
+    "enableEntityAudit": true
 }

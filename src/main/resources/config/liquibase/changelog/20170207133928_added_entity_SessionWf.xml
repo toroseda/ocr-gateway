@@ -17,63 +17,29 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity EdmsResponse.
+        Added the entity SessionWf.
     -->
-    <changeSet id="20170206061929-1" author="jhipster">
-        <createTable tableName="edms_response">
+    <changeSet id="20170207133928-1" author="jhipster">
+        <createTable tableName="session_wf">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="account_number" type="varchar(255)">
+            <column name="status" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="sub_request_id" type="varchar(255)">
+            <column name="wf_status" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="request_doc_type" type="varchar(255)">
+            <column name="updated_by" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             
-            <column name="error_code" type="varchar(255)">
+            <column name="ocr_session_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            
-            <column name="error_description" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="promised_directory" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="response_doc_type" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="response_sub_request_id" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="response_aea_code" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="response_doc_count" type="integer">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="directory_avilable_flg" type="integer">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="file_count" type="integer">
-                <constraints nullable="true" />
-            </column>
-                        <column name="edms_request_id" type="bigint">
-                <constraints unique="true" nullable="true" />
-            </column>
+
             <column name="created_by" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>

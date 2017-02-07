@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.WfStatus;
 
 /**
  * A DTO for the ServiceWf entity.
@@ -15,7 +17,10 @@ public class ServiceWfDTO extends AbstractAuditingDTO implements Serializable {
     private Long id;
 
     @NotNull
-    private Integer statusId;
+    private Status status;
+
+    @NotNull
+    private WfStatus wfStatus;
 
     private String updatedBy;
 
@@ -29,12 +34,19 @@ public class ServiceWfDTO extends AbstractAuditingDTO implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+    public WfStatus getWfStatus() {
+        return wfStatus;
+    }
+
+    public void setWfStatus(WfStatus wfStatus) {
+        this.wfStatus = wfStatus;
     }
     public String getUpdatedBy() {
         return updatedBy;
@@ -77,7 +89,8 @@ public class ServiceWfDTO extends AbstractAuditingDTO implements Serializable {
     public String toString() {
         return "ServiceWfDTO{" +
             "id=" + id +
-            ", statusId='" + statusId + "'" +
+            ", status='" + status + "'" +
+            ", wfStatus='" + wfStatus + "'" +
             ", updatedBy='" + updatedBy + "'" +
             '}';
     }

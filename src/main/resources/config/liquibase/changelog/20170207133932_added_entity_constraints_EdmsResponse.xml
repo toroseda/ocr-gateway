@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <!--
-        Added the constraints for entity SessionWf.
+        Added the constraints for entity EdmsResponse.
     -->
-    <changeSet id="20170206061925-2" author="jhipster">
+    <changeSet id="20170207133932-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="ocr_session_id"
-                                 baseTableName="session_wf"
-                                 constraintName="fk_session_wf_ocr_session_id"
+        <addForeignKeyConstraint baseColumnNames="edms_request_id"
+                                 baseTableName="edms_response"
+                                 constraintName="edms_response_edms_request_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="ocr_session"/>
+                                 referencedTableName="edms_request"/>
 
     </changeSet>
 </databaseChangeLog>

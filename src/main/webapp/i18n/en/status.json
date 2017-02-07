@@ -1,0 +1,19 @@
+{
+    "ocrGatewayApp": {
+        "Status" : {
+            "null": "",
+            "DEFINED": "DEFINED",
+            "LOADED": "LOADED",
+            "VALIDATED": "VALIDATED",
+            "READY": "READY",
+            "REQUESTED": "REQUESTED",
+            "WAITING": "WAITING",
+            "PROCESSING": "PROCESSING",
+            "COMPLETED": "COMPLETED",
+            "PROMISED": "PROMISED",
+            "FULFILLED": "FULFILLED",
+            "PROCESSED": "PROCESSED",
+            "RESPONDED": "RESPONDED"
+        }
+    }
+}

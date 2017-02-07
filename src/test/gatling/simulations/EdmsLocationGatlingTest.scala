@@ -68,7 +68,7 @@ class EdmsLocationGatlingTest extends Simulation {
             .exec(http("Create new edmsLocation")
             .post("/api/edms-locations")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "actualDirectory":"SAMPLE_TEXT", "statusId":"0"}""")).asJSON
+            .body(StringBody("""{"id":null, "actualDirectory":"SAMPLE_TEXT", "status":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_edmsLocation_url"))).exitHereIfFailed
             .pause(10)

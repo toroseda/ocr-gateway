@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -40,10 +40,10 @@ public class ServiceResp extends AbstractAuditingEntity implements Serializable 
     private String documentImage;
 
     @Column(name = "start_date")
-    private LocalDate startDate;
+    private ZonedDateTime startDate;
 
     @Column(name = "end_date")
-    private LocalDate endDate;
+    private ZonedDateTime endDate;
 
     @Column(name = "last_run_by")
     private String lastRunBy;
@@ -52,7 +52,7 @@ public class ServiceResp extends AbstractAuditingEntity implements Serializable 
     private Integer lastRunDur;
 
     @Column(name = "last_run_date")
-    private LocalDate lastRunDate;
+    private ZonedDateTime lastRunDate;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -110,29 +110,29 @@ public class ServiceResp extends AbstractAuditingEntity implements Serializable 
         this.documentImage = documentImage;
     }
 
-    public LocalDate getStartDate() {
+    public ZonedDateTime getStartDate() {
         return startDate;
     }
 
-    public ServiceResp startDate(LocalDate startDate) {
+    public ServiceResp startDate(ZonedDateTime startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(ZonedDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public ZonedDateTime getEndDate() {
         return endDate;
     }
 
-    public ServiceResp endDate(LocalDate endDate) {
+    public ServiceResp endDate(ZonedDateTime endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(ZonedDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -162,16 +162,16 @@ public class ServiceResp extends AbstractAuditingEntity implements Serializable 
         this.lastRunDur = lastRunDur;
     }
 
-    public LocalDate getLastRunDate() {
+    public ZonedDateTime getLastRunDate() {
         return lastRunDate;
     }
 
-    public ServiceResp lastRunDate(LocalDate lastRunDate) {
+    public ServiceResp lastRunDate(ZonedDateTime lastRunDate) {
         this.lastRunDate = lastRunDate;
         return this;
     }
 
-    public void setLastRunDate(LocalDate lastRunDate) {
+    public void setLastRunDate(ZonedDateTime lastRunDate) {
         this.lastRunDate = lastRunDate;
     }
 

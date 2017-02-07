@@ -38,7 +38,7 @@
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="ocrGatewayApp.ocrSession.name">Name</span></th>
                     <th><span data-translate="ocrGatewayApp.ocrSession.description">Description</span></th>
-                    <th><span data-translate="ocrGatewayApp.ocrSession.statusId">Status Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.ocrSession.status">Status</span></th>
                     <th><span data-translate="ocrGatewayApp.ocrSession.serverFilePath">Server File Path</span></th>
                     <th><span data-translate="ocrGatewayApp.ocrSession.filename">Filename</span></th>
                     <th><span data-translate="ocrGatewayApp.ocrSession.requestData">Request Data</span></th>
@@ -51,7 +51,7 @@
                     <td><a ui-sref="ocr-sessionocrData-detail({id:ocrSession.id})">{{ocrSession.id}}</a></td>
                     <td>{{ocrSession.name}}</td>
                     <td>{{ocrSession.description}}</td>
-                    <td>{{ocrSession.statusId}}</td>
+                    <td data-translate="{{'ocrGatewayApp.Status.' + ocrSession.status}}">{{ocrSession.status}}</td>
                     <td>{{ocrSession.serverFilePath}}</td>
                     <td>{{ocrSession.filename}}</td>
                     <td>

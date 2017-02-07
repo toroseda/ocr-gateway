@@ -36,7 +36,8 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="ocrGatewayApp.serviceWf.statusId">Status Id</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceWf.status">Status</span></th>
+                    <th><span data-translate="ocrGatewayApp.serviceWf.wfStatus">Wf Status</span></th>
                     <th><span data-translate="ocrGatewayApp.serviceWf.updatedBy">Updated By</span></th>
                     <th><span data-translate="ocrGatewayApp.serviceWf.serviceResp">Service Resp</span></th>
                     <th></th>
@@ -45,7 +46,8 @@
             <tbody>
                 <tr ng-repeat="serviceWf in vm.serviceWfs track by serviceWf.id">
                     <td><a ui-sref="service-wfocrData-detail({id:serviceWf.id})">{{serviceWf.id}}</a></td>
-                    <td>{{serviceWf.statusId}}</td>
+                    <td data-translate="{{'ocrGatewayApp.Status.' + serviceWf.status}}">{{serviceWf.status}}</td>
+                    <td data-translate="{{'ocrGatewayApp.WfStatus.' + serviceWf.wfStatus}}">{{serviceWf.wfStatus}}</td>
                     <td>{{serviceWf.updatedBy}}</td>
                     <td>
                         <a ui-sref="service-respocrData-detail({id:serviceWf.serviceRespId})">{{serviceWf.serviceRespId}}</a>

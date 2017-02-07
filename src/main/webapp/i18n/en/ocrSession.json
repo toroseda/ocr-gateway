@@ -18,7 +18,7 @@
             },
             "name": "Name",
             "description": "Description",
-            "statusId": "Status Id",
+            "status": "Status",
             "serverFilePath": "Server File Path",
             "filename": "Filename",
             "requestData": "Request Data",

@@ -54,11 +54,11 @@
                     <td>{{edmsRequest.accountNumber}}</td>
                     <td>{{edmsRequest.subRequestId}}</td>
                     <td>{{edmsRequest.areaCode}}</td>
-                        <td>{{edmsRequest.startDate | date:'mediumDate'}}</td>
-                        <td>{{edmsRequest.endDate | date:'mediumDate'}}</td>
+                    <td>{{edmsRequest.startDate | date:'medium'}}</td>
+                    <td>{{edmsRequest.endDate | date:'medium'}}</td>
                     <td>{{edmsRequest.lastRunBy}}</td>
                     <td>{{edmsRequest.lastRunDur}}</td>
-                        <td>{{edmsRequest.lastRunDate | date:'mediumDate'}}</td>
+                    <td>{{edmsRequest.lastRunDate | date:'medium'}}</td>
                     <td>
                         <a ui-sref="ocr-sessionocrData-detail({id:edmsRequest.ocrSessionId})">{{edmsRequest.ocrSessionId}}</a>
                     </td>

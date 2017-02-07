@@ -4,9 +4,13 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="ocrGatewayApp.serviceWf.statusId">Status Id</span></dt>
+        <dt><span data-translate="ocrGatewayApp.serviceWf.status">Status</span></dt>
         <dd>
-            <span>{{vm.serviceWf.statusId}}</span>
+            <span data-translate="{{'ocrGatewayApp.Status.' + vm.serviceWf.status}}">{{vm.serviceWf.status}}</span>
+        </dd>
+        <dt><span data-translate="ocrGatewayApp.serviceWf.wfStatus">Wf Status</span></dt>
+        <dd>
+            <span data-translate="{{'ocrGatewayApp.WfStatus.' + vm.serviceWf.wfStatus}}">{{vm.serviceWf.wfStatus}}</span>
         </dd>
         <dt><span data-translate="ocrGatewayApp.serviceWf.updatedBy">Updated By</span></dt>
         <dd>

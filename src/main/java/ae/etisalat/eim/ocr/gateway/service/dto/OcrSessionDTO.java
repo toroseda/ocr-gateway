@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.Objects;
 import javax.persistence.Lob;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
 
 /**
  * A DTO for the OcrSession entity.
@@ -22,7 +23,7 @@ public class OcrSessionDTO extends AbstractAuditingDTO implements Serializable {
     private String description;
 
     @NotNull
-    private Integer statusId;
+    private Status status;
 
     private String serverFilePath;
 
@@ -58,12 +59,12 @@ public class OcrSessionDTO extends AbstractAuditingDTO implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
     }
     public String getServerFilePath() {
         return serverFilePath;
@@ -129,7 +130,7 @@ public class OcrSessionDTO extends AbstractAuditingDTO implements Serializable {
             "id=" + id +
             ", name='" + name + "'" +
             ", description='" + description + "'" +
-            ", statusId='" + statusId + "'" +
+            ", status='" + status + "'" +
             ", serverFilePath='" + serverFilePath + "'" +
             ", filename='" + filename + "'" +
             ", requestData='" + requestData + "'" +

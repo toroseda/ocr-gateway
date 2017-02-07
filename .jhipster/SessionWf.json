@@ -10,15 +10,17 @@
     ],
     "fields": [
         {
-            "fieldName": "statusId",
-            "fieldType": "Integer",
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "DEFINED,LOADED,VALIDATED,READY,REQUESTED,WAITING,PROCESSING,COMPLETED,PROMISED,FULFILLED,PROCESSED,RESPONDED",
             "fieldValidateRules": [
                 "required"
             ]
         },
         {
-            "fieldName": "wfTypeId",
-            "fieldType": "Integer",
+            "fieldName": "wfStatus",
+            "fieldType": "WfStatus",
+            "fieldValues": "STARTING,STARTED,PROCESSING,ABORTING,ABORTED,COMPLETING,COMPLETED,READY,PUBLISHED,RECEIVED",
             "fieldValidateRules": [
                 "required"
             ]
@@ -28,10 +30,11 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170206061925",
+    "changelogDate": "20170207133928",
     "entityTableName": "session_wf",
     "dto": "mapstruct",
     "pagination": "no",
     "service": "serviceImpl",
-    "angularJSSuffix": "ocrData"
+    "angularJSSuffix": "ocrData",
+    "enableEntityAudit": true
 }

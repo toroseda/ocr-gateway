@@ -17,25 +17,23 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity ServiceWf.
+        Added the entity EdmsLocation.
     -->
-    <changeSet id="20170206061928-1" author="jhipster">
-        <createTable tableName="service_wf">
+    <changeSet id="20170207133933-1" author="jhipster">
+        <createTable tableName="edms_location">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="status_id" type="integer">
+            <column name="actual_directory" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="updated_by" type="varchar(255)">
-                <constraints nullable="true" />
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
             </column>
-            
-            <column name="service_resp_id" type="bigint">
-                <constraints nullable="true" />
+                        <column name="edms_response_id" type="bigint">
+                <constraints unique="true" nullable="true" />
             </column>
-
             <column name="created_by" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>

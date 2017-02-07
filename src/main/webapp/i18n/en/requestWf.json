@@ -16,7 +16,8 @@
             "detail": {
                 "title": "Request Wf"
             },
-            "statusId": "Status Id",
+            "status": "Status",
+            "wfStatus": "Wf Status",
             "updatedBy": "Updated By",
             "edmsRequest": "Edms Request"
         }

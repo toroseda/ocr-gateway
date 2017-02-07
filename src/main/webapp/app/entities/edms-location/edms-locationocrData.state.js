@@ -26,6 +26,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('edmsLocation');
+                    $translatePartialLoader.addPart('status');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
@@ -48,6 +49,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('edmsLocation');
+                    $translatePartialLoader.addPart('status');
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'EdmsLocation', function($stateParams, EdmsLocation) {
@@ -105,7 +107,7 @@
                         entity: function () {
                             return {
                                 actualDirectory: null,
-                                statusId: null,
+                                status: null,
                                 id: null
                             };
                         }

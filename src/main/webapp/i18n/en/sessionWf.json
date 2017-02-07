@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Session Wf"
             },
-            "statusId": "Status Id",
-            "wfTypeId": "Wf Type Id",
+            "status": "Status",
+            "wfStatus": "Wf Status",
             "updatedBy": "Updated By",
             "ocrSession": "Ocr Session"
         }

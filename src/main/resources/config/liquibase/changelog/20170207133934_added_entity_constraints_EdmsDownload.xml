@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <!--
-        Added the constraints for entity RequestWf.
+        Added the constraints for entity EdmsDownload.
     -->
-    <changeSet id="20170206061927-2" author="jhipster">
+    <changeSet id="20170207133934-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="edms_request_id"
-                                 baseTableName="request_wf"
-                                 constraintName="fk_request_wf_edms_request_id"
+        <addForeignKeyConstraint baseColumnNames="edms_location_id"
+                                 baseTableName="edms_download"
+                                 constraintName="edms_download_edms_location_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="edms_request"/>
+                                 referencedTableName="edms_location"/>
 
     </changeSet>
 </databaseChangeLog>

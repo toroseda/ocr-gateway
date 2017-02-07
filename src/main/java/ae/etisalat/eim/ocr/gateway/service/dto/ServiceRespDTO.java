@@ -1,6 +1,6 @@
 package ae.etisalat.eim.ocr.gateway.service.dto;
 
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -23,15 +23,15 @@ public class ServiceRespDTO extends AbstractAuditingDTO implements Serializable 
     private String rawJsonContentType;
     private String documentImage;
 
-    private LocalDate startDate;
+    private ZonedDateTime startDate;
 
-    private LocalDate endDate;
+    private ZonedDateTime endDate;
 
     private String lastRunBy;
 
     private Integer lastRunDur;
 
-    private LocalDate lastRunDate;
+    private ZonedDateTime lastRunDate;
 
 
     private Long edmsDownloadId;
@@ -65,18 +65,18 @@ public class ServiceRespDTO extends AbstractAuditingDTO implements Serializable 
     public void setDocumentImage(String documentImage) {
         this.documentImage = documentImage;
     }
-    public LocalDate getStartDate() {
+    public ZonedDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(ZonedDateTime startDate) {
         this.startDate = startDate;
     }
-    public LocalDate getEndDate() {
+    public ZonedDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(ZonedDateTime endDate) {
         this.endDate = endDate;
     }
     public String getLastRunBy() {
@@ -93,11 +93,11 @@ public class ServiceRespDTO extends AbstractAuditingDTO implements Serializable 
     public void setLastRunDur(Integer lastRunDur) {
         this.lastRunDur = lastRunDur;
     }
-    public LocalDate getLastRunDate() {
+    public ZonedDateTime getLastRunDate() {
         return lastRunDate;
     }
 
-    public void setLastRunDate(LocalDate lastRunDate) {
+    public void setLastRunDate(ZonedDateTime lastRunDate) {
         this.lastRunDate = lastRunDate;
     }
 

@@ -38,11 +38,11 @@
         },
         {
             "fieldName": "startDate",
-            "fieldType": "LocalDate"
+            "fieldType": "ZonedDateTime"
         },
         {
             "fieldName": "endDate",
-            "fieldType": "LocalDate"
+            "fieldType": "ZonedDateTime"
         },
         {
             "fieldName": "lastRunBy",
@@ -54,13 +54,14 @@
         },
         {
             "fieldName": "lastRunDate",
-            "fieldType": "LocalDate"
+            "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20170206061926",
+    "changelogDate": "20170207133929",
     "entityTableName": "edms_request",
     "dto": "mapstruct",
     "pagination": "no",
     "service": "serviceImpl",
-    "angularJSSuffix": "ocrData"
+    "angularJSSuffix": "ocrData",
+    "enableEntityAudit": true
 }

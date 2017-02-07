@@ -9,6 +9,10 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.Status;
+
+import ae.etisalat.eim.ocr.gateway.domain.enumeration.WfStatus;
+
 /**
  * A ServiceWf.
  */
@@ -25,8 +29,14 @@ public class ServiceWf extends AbstractAuditingEntity implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "status_id", nullable = false)
-    private Integer statusId;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private Status status;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(name = "wf_status", nullable = false)
+    private WfStatus wfStatus;
 
     @Column(name = "updated_by")
     private String updatedBy;
@@ -42,17 +52,30 @@ public class ServiceWf extends AbstractAuditingEntity implements Serializable {
         this.id = id;
     }
 
-    public Integer getStatusId() {
-        return statusId;
+    public Status getStatus() {
+        return status;
     }
 
-    public ServiceWf statusId(Integer statusId) {
-        this.statusId = statusId;
+    public ServiceWf status(Status status) {
+        this.status = status;
         return this;
     }
 
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public WfStatus getWfStatus() {
+        return wfStatus;
+    }
+
+    public ServiceWf wfStatus(WfStatus wfStatus) {
+        this.wfStatus = wfStatus;
+        return this;
+    }
+
+    public void setWfStatus(WfStatus wfStatus) {
+        this.wfStatus = wfStatus;
     }
 
     public String getUpdatedBy() {
@@ -105,7 +128,8 @@ public class ServiceWf extends AbstractAuditingEntity implements Serializable {
     public String toString() {
         return "ServiceWf{" +
             "id=" + id +
-            ", statusId='" + statusId + "'" +
+            ", status='" + status + "'" +
+            ", wfStatus='" + wfStatus + "'" +
             ", updatedBy='" + updatedBy + "'" +
             '}';
     }

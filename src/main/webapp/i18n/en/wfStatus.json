@@ -1,0 +1,17 @@
+{
+    "ocrGatewayApp": {
+        "WfStatus" : {
+            "null": "",
+            "STARTING": "STARTING",
+            "STARTED": "STARTED",
+            "PROCESSING": "PROCESSING",
+            "ABORTING": "ABORTING",
+            "ABORTED": "ABORTED",
+            "COMPLETING": "COMPLETING",
+            "COMPLETED": "COMPLETED",
+            "READY": "READY",
+            "PUBLISHED": "PUBLISHED",
+            "RECEIVED": "RECEIVED"
+        }
+    }
+}

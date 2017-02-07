@@ -26,6 +26,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('ocrSession');
+                    $translatePartialLoader.addPart('status');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
@@ -48,6 +49,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('ocrSession');
+                    $translatePartialLoader.addPart('status');
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'OcrSession', function($stateParams, OcrSession) {
@@ -106,7 +108,7 @@
                             return {
                                 name: null,
                                 description: null,
-                                statusId: null,
+                                status: null,
                                 serverFilePath: null,
                                 filename: null,
                                 requestData: null,

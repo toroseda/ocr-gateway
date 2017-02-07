@@ -38,18 +38,25 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.statusId" for="field_statusId">Status Id</label>
-            <input type="number" class="form-control" name="statusId" id="field_statusId"
-                    ng-model="vm.ocrSession.statusId"
-                    required />
-            <div ng-show="editForm.statusId.$invalid">
+            <label class="control-label" data-translate="ocrGatewayApp.ocrSession.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.ocrSession.status" id="field_status" required>
+                <option value="DEFINED" data-translate="ocrGatewayApp.Status.DEFINED">DEFINED</option>
+                <option value="LOADED" data-translate="ocrGatewayApp.Status.LOADED">LOADED</option>
+                <option value="VALIDATED" data-translate="ocrGatewayApp.Status.VALIDATED">VALIDATED</option>
+                <option value="READY" data-translate="ocrGatewayApp.Status.READY">READY</option>
+                <option value="REQUESTED" data-translate="ocrGatewayApp.Status.REQUESTED">REQUESTED</option>
+                <option value="WAITING" data-translate="ocrGatewayApp.Status.WAITING">WAITING</option>
+                <option value="PROCESSING" data-translate="ocrGatewayApp.Status.PROCESSING">PROCESSING</option>
+                <option value="COMPLETED" data-translate="ocrGatewayApp.Status.COMPLETED">COMPLETED</option>
+                <option value="PROMISED" data-translate="ocrGatewayApp.Status.PROMISED">PROMISED</option>
+                <option value="FULFILLED" data-translate="ocrGatewayApp.Status.FULFILLED">FULFILLED</option>
+                <option value="PROCESSED" data-translate="ocrGatewayApp.Status.PROCESSED">PROCESSED</option>
+                <option value="RESPONDED" data-translate="ocrGatewayApp.Status.RESPONDED">RESPONDED</option>
+            </select>
+            <div ng-show="editForm.status.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.statusId.$error.required" data-translate="entity.validation.required">
+                    ng-show="editForm.status.$error.required" data-translate="entity.validation.required">
                     This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.statusId.$error.number" data-translate="entity.validation.number">
-                    This field should be a number.
                 </p>
             </div>
         </div>
